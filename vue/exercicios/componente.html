@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Componente</title>
+    <link rel="stylesheet" href="/css/estilo.css">
+    <script src="/js/vue.min.js"></script>
+</head>
+<body class="exercicio">
+
+    <div id="app">
+        <saudacao nome="ANA"></saudacao>
+        <saudacao nome="PEDRO"></saudacao>
+        <saudacao nome="JOGANA"></saudacao>
+    </div>
+    <script>
+        Vue.component('saudacao', {
+            // "Esse objeto é quase do formato da instancia Vue"
+            props: ['nome'],
+            data: ()=>{
+                return{
+                    contador: 0
+                }
+            },
+            //methods:{...}
+            //computed:{...}
+            //watches:{...}
+            template: 
+            `<div>
+                Bom dia {{nome}}!, Contador {{contador}}
+            </div>`
+        })
+
+        new Vue({
+            el: "#app"
+        })
+    </script>
+</body>
+</html>
